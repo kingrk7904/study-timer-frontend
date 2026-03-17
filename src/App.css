@@ -1,38 +1,102 @@
 .App {
-  text-align: center;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2,
+h3 {
+  margin-bottom: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.subtitle {
+  margin: 0 0 16px;
+  color: #475467;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.session-form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #0b5ed7;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button[disabled] {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+button.danger {
+  background: #b42318;
+}
+
+.form-actions,
+.item-actions {
   display: flex;
-  flex-direction: column;
+  gap: 8px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.session-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e6e8eb;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.error {
+  color: #b42318;
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 0 0 12px;
+}
+
+.status {
+  color: #065f46;
+  background: #ecfdf3;
+  border: 1px solid #abefc6;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 0 0 12px;
+}
+
+@media (max-width: 600px) {
+  .App {
+    margin: 20px auto;
+    padding: 16px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .session-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 }
