@@ -91,7 +91,7 @@ function App() {
     }
   };
 
-  const handleDelete = async (id) => {
+   const handleDelete = async (id) => {
   const confirmed = window.confirm("Delete this session?");
   if (!confirmed) {
     return;
