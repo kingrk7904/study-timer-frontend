@@ -91,28 +91,37 @@ function App() {
     }
   };
 
- const handleDelete = async (id) => {
-    const confirmed = window.confirm("Delete this session?");
-    if (!confirmed) {
-      return;
-    }
+  const handleDelete = async (id) => {
+  const confirmed = window.confirm("Delete this session?");
+  if (!confirmed) {
+    return;
+  }
 
-    setSubmitting(true);
-    setError("");
-    setStatus("");
-    try {
-      await deleteSession(id);
-      await loadSessions();
-      setStatus("Session deleted successfully.");
-      if (editingId === id) {
-        resetForm();
-      }
-    } catch (err) {
-      setError(err.message || "Unable to delete session.");
-    } finally {
-      setSubmitting(false);
+  const password = prompt("Enter administration password:");
+
+  if (password !== "2005") {
+    alert("Enter valid password!");
+    return;
+  }
+
+  setSubmitting(true);
+  setError("");
+  setStatus("");
+
+  try {
+    await deleteSession(id);
+    await loadSessions();
+    setStatus("Session deleted successfully.");
+
+    if (editingId === id) {
+      resetForm();
     }
-  };
+  } catch (err) {
+    setError(err.message || "Unable to delete session.");
+  } finally {
+    setSubmitting(false);
+  }
+};
 
   return (
     <div className="App">
