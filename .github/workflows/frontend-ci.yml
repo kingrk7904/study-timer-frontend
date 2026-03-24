@@ -1,4 +1,4 @@
-name: Frontend CI Pipeline
+name: Frontend sonnarcloudAnalysis
 
 on:
   push:
